@@ -3,7 +3,7 @@ An algorithm to solve SAT problem
 
 
 2.2 系统总体设计
-==
+===
 
 2.2.1 系统总流程
 =
@@ -20,21 +20,24 @@ An algorithm to solve SAT problem
 
 4.Sudoku模块：该模块是数独模块。首先使用挖洞法生成数独终盘，再挖洞生成数独初盘。将数独初盘转化成SAT问题，即将其转换成CNF公式输入到.Cnf文件中，并将文件名返回main函数中。在经过CnfParser模块解析文件后，使用该模块中的SudokuDPLL函数计算出数独的结果并输出。
  
-图2.2 Sudoku模块流程图
+[Sudoku模块流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/2.2.png)
  
-
 3 系统详细设计
-==
+===
 
 3.1 数据结构定义
-=
+==
 
 1）子句头节点定义：
 
 typedef struct HeadNode {
+    
     int Num = 0;
+    
     DataNode *right{};
+    
     HeadNode *down{};
+
 }HeadNode;
 
 子句头节点有三个成员；Num记录该行子句的数据个数，指针right指向到子句第一个数据节点，指针down指向到下一行子句。
@@ -42,8 +45,11 @@ typedef struct HeadNode {
 2）子句数据节点定义：
 
 typedef struct DataNode {
+    
     int data = 0;
+    
     DataNode *next{};
+
 }DataNode;
 
 数据节点有两个成员；data记录该数据节点的值，指针next指向下一个数据节点。
@@ -51,7 +57,9 @@ typedef struct DataNode {
 3）存储真值结构定义：
 
 struct consequence {
+    
     int value = -1;//存真值 真时为true-1，假时为false-0
+
 };
 
 value存入数组的某一元素的真值；若为真，value = 1；若为假，value = 0。
@@ -59,8 +67,11 @@ value存入数组的某一元素的真值；若为真，value = 1；若为假，
 4）存储数独真值结构定义：
 
 struct conse {
+    
     int num = 0;
+    
     int value = -1;//存真值 真时为true-1，假时为false-0
+
 };
 
 结构体conse有两个成员；num存储数独转换为cnf公式的数值，value存储真值；若为真，value = 1；若为假，value = 0。
@@ -69,18 +80,20 @@ struct conse {
 
 主要运用结构体HeadNode和DataNode存储数据，根据两种结构体的数据成员，下图展示出结构体之间的逻辑关系。
  
-图3.1 存储结构关系图
+[存储结构关系图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.1.png)
 
 3.2 主要算法设计
-=
+==
 
 3.2.1 CnfParser模块
+=
 
 该模块主要功能是将cnf文件中的数据读取出来并将它存储到数据结构中。根据文件的特点，现做如下算法设计。算法流程如下图：
  
-图3.2 CnfParser模块流程图
+ [CnfParser模块流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.2.png)
 
 3.2.2 DPLLSolver模块
+=
 
 DPLL算法思想如下：
 
@@ -121,6 +134,7 @@ return DPLL(S ∪¬v);
 6）HeadNode* Duplication(HeadNode* src)函数：将src所指向的子句集复制一个副本，并将副本的头指针返回。
 
 3.2.3 Sudoku模块
+=
 
 该模块功能是①创建数独终盘，②通过挖洞法创建数独初盘，○3将数独初盘转换成SAT问题并转换成cnf公式输出到文件，并返回文件名。
 
@@ -129,23 +143,29 @@ return DPLL(S ∪¬v);
 伪代码如下：
 
 void createSudoku(int a[][COL]) { //生成数独
+    
     randomFirstRow(a[0],COL);//随机生成第一行
+    
     Digit(a,1,0);//递归生成后i行
+
 }
 
 randomFirstRow函数算法流程：
  
-图3.3 randomFirstRow函数算法流程图
+[randomFirstRow函数算法流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.3.png)
 
 Digit函数算法流程：
  
-图3.4 Digit函数算法流程图
+[Digit函数算法流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.4.png)
 
 2）数独初盘生成模块
 createStartinggrid函数算法流程：
  
-图3.5 createStartinggrid函数算法流程图
+[createStartinggrid函数算法流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.5.png)
 
 3）数独问题转换为SAT问题
+
 ToCnf函数模块：
+
 以下为函数算法说明：
+[description](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.6.png)
