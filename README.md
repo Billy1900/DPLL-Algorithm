@@ -2,13 +2,15 @@
 An algorithm to solve SAT problem
 
 
-##2.2 系统总体设计
+2.2 系统总体设计
+==
 
-#2.2.1 系统总流程
+2.2.1 系统总流程
+=
+[image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
  
-！[](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
- 
-#2.2.2 模块功能描述
+2.2.2 模块功能描述
+=
 
 1.Start模块：输出提示词，提示用户输入参数进行选择，输入1进入数独模块，输入2进入SAT问题模块。
 
@@ -22,8 +24,10 @@ An algorithm to solve SAT problem
  
 
 3 系统详细设计
+==
 
 3.1 数据结构定义
+=
 
 1）子句头节点定义：
 
@@ -68,6 +72,7 @@ struct conse {
 图3.1 存储结构关系图
 
 3.2 主要算法设计
+=
 
 3.2.1 CnfParser模块
 
