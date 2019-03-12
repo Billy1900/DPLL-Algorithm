@@ -1,12 +1,14 @@
-# DPLL-Algorithm
+### DPLL-Algorithm
 An algorithm to solve SAT problem
 
 
-2.2 系统总体设计
+##2.2 系统总体设计
 
-2.2.1 系统总流程
+#2.2.1 系统总流程
  
-2.2.2 模块功能描述
+！[](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
+ 
+#2.2.2 模块功能描述
 
 1.Start模块：输出提示词，提示用户输入参数进行选择，输入1进入数独模块，输入2进入SAT问题模块。
 
