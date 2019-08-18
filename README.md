@@ -1,16 +1,15 @@
-### DPLL-Algorithm
+# DPLL-Algorithm
 An algorithm to solve SAT problem
 
 
-系统总体设计
-==
+## 系统总体设计
 
-系统总流程
-=
-[image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
+
+## 系统总流程
+
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
  
-模块功能描述
-=
+## 模块功能描述
 
 1.Start模块：输出提示词，提示用户输入参数进行选择，输入1进入数独模块，输入2进入SAT问题模块。
 
@@ -20,18 +19,18 @@ An algorithm to solve SAT problem
 
 4.Sudoku模块：该模块是数独模块。首先使用挖洞法生成数独终盘，再挖洞生成数独初盘。将数独初盘转化成SAT问题，即将其转换成CNF公式输入到.Cnf文件中，并将文件名返回main函数中。在经过CnfParser模块解析文件后，使用该模块中的SudokuDPLL函数计算出数独的结果并输出。
  
-[Sudoku模块流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/2.2.png)
+![Sudoku模块流程图](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/2.2.png)
  
 
-系统详细设计
-===
+## 系统详细设计
 
-数据结构定义
-==
+
+## 数据结构定义
+
 
 1）子句头节点定义：
 
-typedef struct HeadNode {
+<pre>typedef struct HeadNode {
     
     int Num = 0;
     
@@ -40,7 +39,7 @@ typedef struct HeadNode {
     HeadNode *down{};
 
 }HeadNode;
-
+</pre>
 子句头节点有三个成员；Num记录该行子句的数据个数，指针right指向到子句第一个数据节点，指针down指向到下一行子句。
 
 2）子句数据节点定义：
