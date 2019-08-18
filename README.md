@@ -19,7 +19,7 @@ An algorithm to solve SAT problem
 
 4.Sudoku模块：该模块是数独模块。首先使用挖洞法生成数独终盘，再挖洞生成数独初盘。将数独初盘转化成SAT问题，即将其转换成CNF公式输入到.Cnf文件中，并将文件名返回main函数中。在经过CnfParser模块解析文件后，使用该模块中的SudokuDPLL函数计算出数独的结果并输出。
  
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/2.2.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/2.2.png)
  
 
 ## 系统详细设计
@@ -80,7 +80,7 @@ value存入数组的某一元素的真值；若为真，value = 1；若为假，
 
 主要运用结构体HeadNode和DataNode存储数据，根据两种结构体的数据成员，下图展示出结构体之间的逻辑关系。
  
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.1.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.1.png)
 
 ## 主要算法设计
 
@@ -90,7 +90,7 @@ value存入数组的某一元素的真值；若为真，value = 1；若为假，
 
 该模块主要功能是将cnf文件中的数据读取出来并将它存储到数据结构中。根据文件的特点，现做如下算法设计。算法流程如下图：
  
- ![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.2.png)
+ ![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.2.png)
 
 ## DPLLSolver模块
 <pre>
@@ -152,20 +152,20 @@ return DPLL(S ∪¬v);
 </pre>
 randomFirstRow函数算法流程：
  
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.3.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.3.png)
 
 Digit函数算法流程：
  
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.4.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.4.png)
 
 2）数独初盘生成模块
 createStartinggrid函数算法流程：
  
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.5.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.5.png)
 
 3）数独问题转换为SAT问题
 
 ToCnf函数模块：
 
 以下为函数算法说明：
-![image](https://github.com/Billy1900/DPLL-Algorithm/tree/master/pic/3.6.png)
+![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.6.png)
