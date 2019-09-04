@@ -2,14 +2,14 @@
 An algorithm to solve SAT problem
 
 
-## 系统总体设计
+## 1 系统总体设计
 
 
-## 系统总流程
+## 1.1 系统总流程
 
 ![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/1.png)
  
-## 模块功能描述
+## 1.2 模块功能描述
 
 1.Start模块：输出提示词，提示用户输入参数进行选择，输入1进入数独模块，输入2进入SAT问题模块。
 
@@ -22,10 +22,10 @@ An algorithm to solve SAT problem
 ![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/2.2.png)
  
 
-## 系统详细设计
+## 2 系统详细设计
 
 
-## 数据结构定义
+## 2.1 数据结构定义
 
 
 1）子句头节点定义：
@@ -82,17 +82,17 @@ value存入数组的某一元素的真值；若为真，value = 1；若为假，
  
 ![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.1.png)
 
-## 主要算法设计
+## 3. 主要算法设计
 
 
-## CnfParser模块
+## 3.1 CnfParser模块
 
 
 该模块主要功能是将cnf文件中的数据读取出来并将它存储到数据结构中。根据文件的特点，现做如下算法设计。算法流程如下图：
  
  ![image](https://github.com/Billy1900/DPLL-Algorithm/blob/master/pic/3.2.png)
 
-## DPLLSolver模块
+## 3.2 DPLLSolver模块
 <pre>
 
 DPLL算法思想如下：
@@ -133,7 +133,7 @@ return DPLL(S ∪¬v);
 
 6）HeadNode* Duplication(HeadNode* src)函数：将src所指向的子句集复制一个副本，并将副本的头指针返回。
 
-## Sudoku模块
+## 4. Sudoku模块
 
 
 该模块功能是①创建数独终盘，②通过挖洞法创建数独初盘，○3将数独初盘转换成SAT问题并转换成cnf公式输出到文件，并返回文件名。
