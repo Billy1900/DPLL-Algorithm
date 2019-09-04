@@ -133,7 +133,7 @@ return DPLL(S ∪¬v);
 
 6）HeadNode* Duplication(HeadNode* src)函数：将src所指向的子句集复制一个副本，并将副本的头指针返回。
 
-## 4. Sudoku模块
+## 3.3 Sudoku模块
 
 
 该模块功能是①创建数独终盘，②通过挖洞法创建数独初盘，○3将数独初盘转换成SAT问题并转换成cnf公式输出到文件，并返回文件名。
